@@ -1,23 +1,45 @@
+'use client';
+
 import Link from 'next/link';
 import styles from './style.module.scss';
-// import { motion } from 'framer-motion';
-// import { opacity } from './anim';
+import { motion, AnimatePresence } from 'framer-motion';
+import { opacity } from './anim';
+import { useState } from 'react';
+import Nav from './nav/Nav';
 
-const Header = () => {
+function Header() {
+  const [isActive, setIsActive] = useState(false);
+
   return (
     <div className={styles.header}>
       <div className={styles.bar}>
         <Link href="/">Viney</Link>
 
-        <div className={styles.el}>
+        <div
+          onMouseDown={() => {
+            setIsActive(!isActive);
+          }}
+          className={styles.el}
+        >
           <div className={styles.burger}></div>
           <div className={styles.label}>
-            <p>Menu</p>
-            <p>Close</p>
+            <motion.p variants={opacity} animate={isActive ? 'closed' : 'open'}>
+              Menu
+            </motion.p>
+            <motion.p
+              variants={opacity}
+              animate={!isActive ? 'closed' : 'open'}
+            >
+              Close
+            </motion.p>
           </div>
         </div>
 
-        <div className={styles.shopContainer}>
+        <motion.div
+          variants={opacity}
+          animate={isActive ? 'closed' : 'open'}
+          className={styles.shopContainer}
+        >
           <p className={styles.shop}>Shop</p>
           <div className={styles.el}>
             <svg
@@ -37,10 +59,11 @@ const Header = () => {
             </svg>
             <p>Cart(0)</p>
           </div>
-        </div>
+        </motion.div>
       </div>
+      <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>
     </div>
   );
-};
+}
 
 export default Header;
