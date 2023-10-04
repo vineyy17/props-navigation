@@ -1,6 +1,7 @@
 import styles from './style.module.scss';
 import { motion, AnimatePresence } from 'framer-motion';
 import { height } from '../anim';
+import Body from './body/Body';
 
 function Nav() {
   return (
@@ -12,10 +13,11 @@ function Nav() {
       exit="exit"
     >
       <div className={styles.wrapper}>
-        <p>Nav</p>
-        <p>Nav</p>
-        <p>Nav</p>
-        <p>Nav</p>
+        <div className={styles.container}>
+          <Body />
+          {/* <Footer /> */}
+        </div>
+        {/* <Image /> */}
       </div>
     </motion.div>
   );
