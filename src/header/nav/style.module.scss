@@ -1,8 +1,13 @@
 .nav {
   overflow: hidden;
   .wrapper {
+    display: flex;
+    // margin-bottom: 80px;
+    gap: 50px;
     p {
       margin: 0px;
+      display: flex;
+      overflow: hidden;
     }
   }
 }

@@ -3,12 +3,18 @@
 import Link from 'next/link';
 import styles from './style.module.scss';
 import { motion, AnimatePresence } from 'framer-motion';
-import { opacity } from './anim';
-import { useState } from 'react';
+import { opacity, background } from './anim';
+import { useEffect, useState } from 'react';
 import Nav from './nav/Nav';
+import { usePathname } from 'next/navigation';
 
 function Header() {
   const [isActive, setIsActive] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setIsActive(false);
+  }, [pathname]);
 
   return (
     <div className={styles.header}>
@@ -21,7 +27,11 @@ function Header() {
           }}
           className={styles.el}
         >
-          <div className={styles.burger}></div>
+          <div
+            className={`${styles.burger} ${
+              isActive ? styles.burgerActive : ''
+            }`}
+          ></div>
           <div className={styles.label}>
             <motion.p variants={opacity} animate={isActive ? 'closed' : 'open'}>
               Menu
@@ -61,6 +71,11 @@ function Header() {
           </div>
         </motion.div>
       </div>
+      <motion.div
+        className={styles.background}
+        variants={background}
+        animate={isActive ? 'open' : 'closed'}
+      ></motion.div>
       <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>
     </div>
   );
