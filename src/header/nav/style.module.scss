@@ -2,12 +2,27 @@
   overflow: hidden;
   .wrapper {
     display: flex;
-    // margin-bottom: 80px;
-    gap: 50px;
-    p {
-      margin: 0px;
+    margin-bottom: 80px;
+    gap: 80px;
+
+    @media only screen and (min-width: 1000px) {
+      margin-bottom: 0px;
+      justify-content: space-between;
+    }
+
+    .container {
       display: flex;
-      overflow: hidden;
+      flex-direction: column;
+      justify-content: space-between;
     }
   }
 }
+
+// @media only screen and (min-width: 1000px) {
+//   .nav {
+//     .wrapper {
+//       margin-bottom: 0px;
+//       justify-content: space-between;
+//     }
+//   }
+// }

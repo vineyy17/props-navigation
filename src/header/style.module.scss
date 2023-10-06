@@ -9,6 +9,10 @@
     padding: 20px;
   }
 
+  @media only screen and (min-width: 1000px) {
+    padding: 15px;
+  }
+
   .background {
     background-color: black;
     opacity: 0.5;
@@ -95,7 +99,7 @@
         }
 
         &::after {
-          top: -4px;
+          top: -5px;
         }
 
         &::before {
@@ -105,12 +109,12 @@
 
       .burgerActive {
         &::after {
-          transform: rotate(45deg);
+          transform: rotate(-45deg);
           top: -1px;
         }
 
         &::before {
-          transform: rotate(-45deg);
+          transform: rotate(45deg);
           top: 1px;
         }
       }
