@@ -74,6 +74,7 @@ function Header() {
       <motion.div
         className={styles.background}
         variants={background}
+        initial="initial"
         animate={isActive ? 'open' : 'closed'}
       ></motion.div>
       <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>

@@ -31,11 +31,12 @@ export const height = {
 export const translate = {
   initial: {
     y: '100%',
+    opacity: 0,
   },
   enter: (i) => ({
     y: 0,
     opacity: 1,
-    transition: { ...transition, delay: i[0] },
+    transition: { duration: 1, ease: [0.76, 0, 0.24, 1], delay: i[0] },
   }),
   exit: (i) => ({
     y: '100%',
