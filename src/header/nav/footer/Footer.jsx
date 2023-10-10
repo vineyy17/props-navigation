@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
-import styles from './style.module.scss';
-import { translate } from '../../anim';
+import { motion } from "framer-motion";
+import styles from "./style.module.scss";
+import { translate } from "../../anim";
 
 function Footer() {
   return (
@@ -35,7 +35,7 @@ function Footer() {
           animate="enter"
           exit="exit"
         >
-          <span>Images:</span> Freepik, Envato
+          <span>Images:</span> Hardclo
         </motion.li>
       </ul>
       <ul>

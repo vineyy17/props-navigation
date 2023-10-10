@@ -1,37 +1,37 @@
-import styles from './style.module.scss';
-import { motion, AnimatePresence } from 'framer-motion';
-import { height } from '../anim';
-import Body from './body/Body';
-import { useState } from 'react';
-import ImageComponent from './image/ImageComponent';
-import Footer from './footer/Footer';
+import styles from "./style.module.scss";
+import { motion, AnimatePresence } from "framer-motion";
+import { height } from "../anim";
+import Body from "./body/Body";
+import { useState } from "react";
+import ImageComponent from "./image/ImageComponent";
+import Footer from "./footer/Footer";
 
 function Nav() {
   const links = [
     {
-      title: 'Home',
-      href: '/',
-      src: 'home.png',
+      title: "Home",
+      href: "/",
+      src: "home.jpg",
     },
     {
-      title: 'Shop',
-      href: '/shop',
-      src: 'shop.png',
+      title: "Shop",
+      href: "/shop",
+      src: "shop.jpeg",
     },
     {
-      title: 'About Us',
-      href: '/about',
-      src: 'home.png',
+      title: "About Us",
+      href: "/about",
+      src: "about_us.jpeg",
     },
     {
-      title: 'Lookbook',
-      href: '/lookbook',
-      src: 'lookbook.png',
+      title: "Lookbook",
+      href: "/lookbook",
+      src: "lookbook.jpg",
     },
     {
-      title: 'Contact',
-      href: '/contact',
-      src: 'contact.png',
+      title: "Contact",
+      href: "/contact",
+      src: "contact.jpeg",
     },
   ];
 
